@@ -33,12 +33,22 @@ window.addEventListener("resize", ()=>{
 });
 window.dispatchEvent(new Event("resize"));
 
-Loader.shared.add({url: "./dino.jpg", name:"Dino"});
+Loader.shared.add({url: "./dino.png", name:"Dino"});
+Loader.shared.add({url: "./gorra.png", name:"Hat"});
 Loader.shared.onComplete.add(()=> {
 const dino:  Sprite = Sprite.from("Dino");
+const hat:  Sprite = Sprite.from("Hat");
+dino.x=100;
+dino.y=100;
+dino.scale.x = 0.5;
+dino.scale.y = 0.5;
+dino.angle=0;
+hat.scale.set(0.2, 0.2);
+hat.position.set(250,50);
+//const dinowithHat: Container= new Container();
 
-dino.x = 0;
-dino.y = 0;
 app.stage.addChild(dino);
+app.stage.addChild(hat);
+
 }); 
 Loader.shared.load();
